@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BCO Dental Center - Premium Dark Theme Design System */
+
+@layer base {
+  :root {
+    /* Dark theme - Primary palette */
+    --background: 215 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Dental Blue */
+    --primary: 210 88% 45%;
+    --primary-foreground: 210 40% 98%;
+    --primary-dark: 210 88% 35%;
+
+    /* Secondary - Premium Gold */
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 215 25% 8%;
+    --secondary-dark: 45 85% 48%;
+
+    /* Muted tones */
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent - Light gold */
+    --accent: 45 93% 68%;
+    --accent-foreground: 215 25% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 18%;
+    --input: 215 25% 15%;
+    --ring: 210 88% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 88% 45%), hsl(210 88% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(45 93% 58%), hsl(45 85% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 25% 8%) 0%, hsl(215 25% 12%) 50%, hsl(210 88% 8%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(215 25% 8%), hsl(215 25% 10%));
+    --gradient-card: linear-gradient(145deg, hsl(215 25% 12%), hsl(215 25% 15%));
+    --gradient-overlay: linear-gradient(135deg, hsl(210 88% 45% / 0.1), hsl(45 93% 58% / 0.05));
+
+    /* Shadows */
+    --shadow-premium: 0 20px 40px hsl(215 25% 4% / 0.3);
+    --shadow-card: 0 8px 24px hsl(215 25% 4% / 0.2);
+    --shadow-glow: 0 0 30px hsl(210 88% 45% / 0.3);
+    --shadow-gold: 0 0 20px hsl(45 93% 58% / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-section {
+    background: var(--gradient-section);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Counter animation */
+  .counter-item {
+    @apply opacity-0 translate-y-4;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .counter-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .counter-item:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  /* Floating button */
+  .float-whatsapp {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg;
+    animation: pulse 2s infinite;
+  }
+  
+  /* CTA button animations */
+  .cta-button {
+    @apply relative overflow-hidden;
+  }
+  
+  .cta-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+  
+  .cta-button:hover::before {
+    transform: translateX(100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
