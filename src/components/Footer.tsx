@@ -152,7 +152,7 @@ const Footer = () => {
                 © 2025 BCO - Blanca Centro Odontológico. Todos os direitos reservados.
               </p>
               <p className="text-xs text-muted-foreground/60 mt-1">
-                CRO-SP 12345 | Dra. Blanca Torres
+                Dra. Blanca Torres
               </p>
             </div>
           </div>
